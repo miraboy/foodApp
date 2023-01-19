@@ -73,7 +73,9 @@ class _loginpageState extends State<loginpage> {
                                   borderRadius: BorderRadius.all(Radius.circular(20)),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/foods');
+                              },
                               child: const Text('Log in', style: TextStyle(fontSize: 18),),
                               
                             ),
