@@ -1,29 +1,33 @@
+import 'package:FoodApp/screens/food.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class Onboarding extends StatelessWidget {
+class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const OnboardingPage();
+  State<Onboarding> createState() => _OnboardingState();
+}
+
+class _OnboardingState extends State<Onboarding> {
+  PageController pageController = PageController(initialPage: 0);
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
   }
-}
 
-class OnboardingPage extends StatefulWidget {
-  const OnboardingPage({super.key});
-
-  @override
-  State<OnboardingPage> createState() => _OnboardingPageState();
-}
-
-class _OnboardingPageState extends State<OnboardingPage> {
-  
+  void nextPage() {
+    pageController.nextPage(
+        duration: const Duration(milliseconds: 700), curve: Curves.easeInOut);
+  }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: PageView(
+        controller: pageController,
         children: [
           Container(
               color: Color.fromRGBO(249, 198, 159, 1),
@@ -31,7 +35,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/foods');
+                      },
                       child: const Text(
                         "Skip",
                         style: TextStyle(
@@ -44,7 +50,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     fit: BoxFit.cover,
                   ),
                   const SizedBox(
-                    height: 45,
+                    height: 35,
                   ),
                   const Text(
                     "Find a restaurant",
@@ -67,13 +73,32 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     height: 28,
                   ),
                   Center(
+                    child: SmoothPageIndicator(
+                      controller: pageController,
+                      count: 3,
+                      effect: ScaleEffect(
+                          dotColor: Colors.grey,
+                          activeDotColor: Colors.white,
+                          dotHeight: 15,
+                          dotWidth: 15,
+                          spacing: 10.0),
+                      onDotClicked: (index) => pageController.animateToPage(
+                        index,
+                        duration: const Duration(milliseconds: 700),
+                        curve: Curves.easeInOut,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 28,
+                  ),
+                  Center(
                     child: FloatingActionButton(
                       onPressed: () {
-
+                        nextPage();
                       },
                       backgroundColor: Color.fromRGBO(255, 88, 0, 1),
-                      child: Icon(Icons.navigate_next,
-                          color: Colors.white),
+                      child: Icon(Icons.navigate_next, color: Colors.white),
                     ),
                   ),
                 ],
@@ -84,7 +109,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/foods');
+                      },
                       child: const Text(
                         "Skip",
                         style: TextStyle(
@@ -97,7 +124,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     fit: BoxFit.cover,
                   ),
                   const SizedBox(
-                    height: 45,
+                    height: 35,
                   ),
                   Text(
                     "Contact us anytime",
@@ -119,12 +146,33 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   const SizedBox(
                     height: 28,
                   ),
+                 Center(
+                    child: SmoothPageIndicator(
+                      controller: pageController,
+                      count: 3,
+                      effect: ScaleEffect(
+                          dotColor: Colors.grey,
+                          activeDotColor: Colors.white,
+                          dotHeight: 15,
+                          dotWidth: 15,
+                          spacing: 10.0),
+                      onDotClicked: (index) => pageController.animateToPage(
+                        index,
+                        duration: const Duration(milliseconds: 700),
+                        curve: Curves.easeInOut,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 28,
+                  ),
                   Center(
                     child: FloatingActionButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        nextPage();
+                      },
                       backgroundColor: Color.fromRGBO(237, 171, 0, 1),
-                      child: Icon(Icons.navigate_next,
-                          color: Colors.white),
+                      child: Icon(Icons.navigate_next, color: Colors.white),
                     ),
                   ),
                 ],
@@ -135,7 +183,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/foods');
+                      },
                       child: const Text(
                         "Skip",
                         style: TextStyle(
@@ -148,7 +198,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     fit: BoxFit.cover,
                   ),
                   const SizedBox(
-                    height: 45,
+                    height: 35,
                   ),
                   Text(
                     "Pick the food you need",
@@ -171,18 +221,38 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     height: 28,
                   ),
                   Center(
+                    child: SmoothPageIndicator(
+                      controller: pageController,
+                      count: 3,
+                      effect: ScaleEffect(
+                          dotColor: Colors.grey,
+                          activeDotColor: Colors.white,
+                          dotHeight: 15,
+                          dotWidth: 15,
+                          spacing: 10.0),
+                      onDotClicked: (index) => pageController.animateToPage(
+                        index,
+                        duration: const Duration(milliseconds: 700),
+                        curve: Curves.easeInOut,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 28,
+                  ),
+                  Center(
                     child: FloatingActionButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        nextPage();
+                      },
                       backgroundColor: Color.fromRGBO(0, 134, 222, 1),
-                      child: Icon(Icons.navigate_next,
-                          color: Colors.white),
+                      child: Icon(Icons.navigate_next, color: Colors.white),
                     ),
                   ),
                 ],
               )),
         ],
       ),
-      
     );
   }
 }
