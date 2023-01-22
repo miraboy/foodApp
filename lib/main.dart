@@ -3,6 +3,7 @@ import 'package:FoodApp/screens/register.dart';
 import 'package:flutter/material.dart';
 import 'screens/accueil.dart';
 import 'screens/food.dart';
+import 'screens/onboarding.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         '/home':(context) => home(),
         '/login':(context) => login(),
         '/register':(context) => Register(),
-        '/foods':(context) => food()
+        '/foods':(context) => food(),
+        '/onboarding':(context) => Onboarding(),
       },
       home: const accueil(),
     );
