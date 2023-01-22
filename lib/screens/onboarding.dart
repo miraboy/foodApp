@@ -17,25 +17,28 @@ class OnboardingPage extends StatefulWidget {
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
-  final controller = PageController();
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
+  
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: PageView(
-        controller: controller,
         children: [
           Container(
               color: Color.fromRGBO(249, 198, 159, 1),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(onPressed: (){}, child: Text("Skip")),
+                  TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "Skip",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      )),
                   Image.asset(
                     'lib/assets/onboarding1.png',
                     fit: BoxFit.cover,
@@ -43,7 +46,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   const SizedBox(
                     height: 45,
                   ),
-                  Text(
+                  const Text(
                     "Find a restaurant",
                     style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
                   ),
@@ -52,12 +55,25 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
-                    child: Text(
+                    child: const Text(
                       "Fatest operation to provide food by the fence",
                       style: TextStyle(
                         fontSize: 20,
                       ),
                       textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 28,
+                  ),
+                  Center(
+                    child: FloatingActionButton(
+                      onPressed: () {
+
+                      },
+                      backgroundColor: Color.fromRGBO(255, 88, 0, 1),
+                      child: Icon(Icons.navigate_next,
+                          color: Colors.white),
                     ),
                   ),
                 ],
@@ -67,7 +83,15 @@ class _OnboardingPageState extends State<OnboardingPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(onPressed: (){}, child: Text("Skip")),
+                  TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "Skip",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      )),
                   Image.asset(
                     'lib/assets/onboarding2.png',
                     fit: BoxFit.cover,
@@ -92,6 +116,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       textAlign: TextAlign.center,
                     ),
                   ),
+                  const SizedBox(
+                    height: 28,
+                  ),
+                  Center(
+                    child: FloatingActionButton(
+                      onPressed: () {},
+                      backgroundColor: Color.fromRGBO(237, 171, 0, 1),
+                      child: Icon(Icons.navigate_next,
+                          color: Colors.white),
+                    ),
+                  ),
                 ],
               )),
           Container(
@@ -99,7 +134,15 @@ class _OnboardingPageState extends State<OnboardingPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(onPressed: (){}, child: Text("Skip")),
+                  TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "Skip",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      )),
                   Image.asset(
                     'lib/assets/onboarding3.png',
                     fit: BoxFit.cover,
@@ -124,10 +167,22 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       textAlign: TextAlign.center,
                     ),
                   ),
+                  const SizedBox(
+                    height: 28,
+                  ),
+                  Center(
+                    child: FloatingActionButton(
+                      onPressed: () {},
+                      backgroundColor: Color.fromRGBO(0, 134, 222, 1),
+                      child: Icon(Icons.navigate_next,
+                          color: Colors.white),
+                    ),
+                  ),
                 ],
               )),
         ],
       ),
+      
     );
   }
 }
