@@ -4,6 +4,7 @@ import 'package:FoodApp/screens/register.dart';
 import 'package:flutter/material.dart';
 import 'screens/accueil.dart';
 import 'screens/food.dart';
+import 'screens/onboarding.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -20,13 +21,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/home',
+      initialRoute: '/onboarding',
       // ignore: prefer_const_literals_to_create_immutables
       routes:  {
         '/home':(context) => home(),
         '/login':(context) => login(),
         '/register':(context) => Register(),
         '/foods':(context) => food(),
+        '/onboarding':(context) => Onboarding(),
         '/fooddetails':(context) => fooddetails()
       },
       home: const accueil(),
