@@ -1,3 +1,4 @@
+import 'package:FoodApp/screens/food_details.dart';
 import 'package:FoodApp/screens/login_page.dart';
 import 'package:FoodApp/screens/register.dart';
 import 'package:flutter/material.dart';
@@ -25,10 +26,11 @@ class MyApp extends StatelessWidget {
         '/home':(context) => home(),
         '/login':(context) => login(),
         '/register':(context) => Register(),
-        '/foods':(context) => food()
+        '/foods':(context) => food(),
+        '/fooddetails':(context) => fooddetails()
       },
       home: const accueil(),
-    );
+    ); 
   }
 }
 
