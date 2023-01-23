@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/home',
+      initialRoute: '/onboarding',
       // ignore: prefer_const_literals_to_create_immutables
       routes:  {
         '/home':(context) => home(),

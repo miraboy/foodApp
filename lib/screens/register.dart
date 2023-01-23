@@ -77,9 +77,7 @@ class Register extends StatelessWidget {
                                       BorderRadius.all(Radius.circular(20)),
                                 ),
                               ),
-                              onPressed: () {
-                                Navigator.pushNamed(context, '/onboarding');
-                              },
+                              onPressed: () {},
                               child: const Text(
                                 'Register',
                                 style: TextStyle(fontSize: 18),
