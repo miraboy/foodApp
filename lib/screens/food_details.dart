@@ -17,6 +17,12 @@ class listfooddetails extends StatefulWidget {
 }
 
 class _listfooddetailsState extends State<listfooddetails> {
+  final ButtonStyle style = ElevatedButton.styleFrom(
+    textStyle: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+    padding: EdgeInsets.all(0),
+
+  );
+
   @override
   Widget build(BuildContext context) {
 
@@ -99,11 +105,11 @@ class _listfooddetailsState extends State<listfooddetails> {
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(color: Colors.white ),
-                      padding: EdgeInsets.all(16),
+                      //padding: EdgeInsets.all(16),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                           Row(
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
@@ -116,20 +122,46 @@ class _listfooddetailsState extends State<listfooddetails> {
                             ]
                           ),
                           Container(
-                            padding: EdgeInsets.all(20),
+                            padding: EdgeInsets.symmetric(horizontal: 16),
                             child: Center(
                               child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  TextButton(                                    
-                                    onPressed: () {},
-                                    child: const Text('-', style: TextStyle(fontSize: 25),),
+                                  Container(
+                                    decoration: BoxDecoration( 
+                                      border: Border.all(color: Colors.grey,style: BorderStyle.solid,),
+                                      borderRadius: BorderRadius.circular(10)
+                                    ),
+                                    child: IconButton(onPressed: () {}, icon: Icon(Icons.remove))
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal:10.0),
+                                    child: Text("1",style: TextStyle(fontSize: 25)),
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration( 
+                                      border: Border.all(color: Colors.grey,style: BorderStyle.solid,),
+                                      borderRadius: BorderRadius.circular(10)
+                                    ),
+                                    child: IconButton(onPressed: () {}, icon: Icon(Icons.add))
                                   )
                                 ],
                                 )
                               ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 40),
+                            child: ElevatedButton(
+                              //style: ButtonStyle(backgroundColor: Colors.brown),
+                              onPressed: () {}, 
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Text('ADD TO CART'),
+                                  Text('\$ 7,00')
+                                ],
+                              )),
                           )
-                          ,
-                          Text("data")
                         ],
                       ),
                     )
