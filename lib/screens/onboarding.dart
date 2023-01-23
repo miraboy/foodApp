@@ -36,19 +36,19 @@ class _OnboardingState extends State<Onboarding> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/home');
-                    },
-                    child: const Text(
-                      "Skip",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                  )),    
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/home');
+                      },
+                      child: const Text(
+                        "Skip",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      )),
                   Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
                       Image.asset(
                         'lib/assets/onboarding1.png',
                         fit: BoxFit.cover,
@@ -58,7 +58,8 @@ class _OnboardingState extends State<Onboarding> {
                       ),
                       const Text(
                         "Find a restaurant",
-                        style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 32, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(
                         height: 24,
@@ -105,7 +106,8 @@ class _OnboardingState extends State<Onboarding> {
                           child: Icon(Icons.navigate_next, color: Colors.white),
                         ),
                       ),
-                    ],)
+                    ],
+                  )
                 ],
               )),
           Container(
@@ -137,7 +139,8 @@ class _OnboardingState extends State<Onboarding> {
                       ),
                       Text(
                         "Contact us anytime",
-                        style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 32, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(
                         height: 24,
@@ -155,7 +158,7 @@ class _OnboardingState extends State<Onboarding> {
                       const SizedBox(
                         height: 28,
                       ),
-                 Center(
+                      Center(
                         child: SmoothPageIndicator(
                           controller: pageController,
                           count: 3,
@@ -217,7 +220,8 @@ class _OnboardingState extends State<Onboarding> {
                       ),
                       Text(
                         "Pick the food you need",
-                        style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 32, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(
                         height: 24,
@@ -258,7 +262,7 @@ class _OnboardingState extends State<Onboarding> {
                       Center(
                         child: FloatingActionButton(
                           onPressed: () {
-                            nextPage();
+                            Navigator.pushNamed(context, '/home');
                           },
                           backgroundColor: Color.fromRGBO(0, 134, 222, 1),
                           child: Icon(Icons.navigate_next, color: Colors.white),
