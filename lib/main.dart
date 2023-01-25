@@ -24,18 +24,19 @@ class MyApp extends StatelessWidget {
       initialRoute: '/onboarding',
       // ignore: prefer_const_literals_to_create_immutables
       routes:  {
-        '/home':(context) => home(),
-        '/login':(context) => login(),
-        '/register':(context) => Register(),
-        '/foods':(context) => food(),
-        '/onboarding':(context) => Onboarding(),
-        '/fooddetails':(context) => fooddetails()
+        '/home':(context) => const home(),
+        '/login':(context) => const login(),
+        '/register':(context) => const Register(),
+        '/foods':(context) => const food(),
+        '/onboarding':(context) => const Onboarding(),
+        '/fooddetails':(context) => const fooddetails()
       },
       home: const accueil(),
     ); 
   }
 }
 
+// ignore: camel_case_types
 class accueil extends StatelessWidget {
   const accueil({Key? key}) : super(key: key);
 

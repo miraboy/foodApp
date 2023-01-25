@@ -1,6 +1,6 @@
-import 'package:FoodApp/screens/login_page.dart';
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class home extends StatelessWidget {
   const home({Key? key}) : super(key: key);
 
@@ -38,7 +38,7 @@ class home extends StatelessWidget {
                             onPressed: () {
                               Navigator.pushNamed(context, '/login');
                             },
-                            child: Text('Login', style: TextStyle(fontSize: 18),),
+                            child: const Text('Login', style: TextStyle(fontSize: 18),),
                             
                           ),
                           const SizedBox(height: 15,),
@@ -55,7 +55,7 @@ class home extends StatelessWidget {
                             onPressed: () { 
                               Navigator.pushNamed(context, '/register');
                             },
-                            child: Text('Register', style: TextStyle(fontSize: 18),),
+                            child: const Text('Register', style: TextStyle(fontSize: 18),),
                             
                           )
                         ],

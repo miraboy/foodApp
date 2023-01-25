@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class food extends StatelessWidget {
   const food({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return listfood();
+    return const listfood();
   }
 }
 
+// ignore: camel_case_types
 class listfood extends StatefulWidget {
   const listfood({super.key});
 
@@ -16,6 +18,7 @@ class listfood extends StatefulWidget {
   State<listfood> createState() => _listfoodState();
 }
 
+// ignore: camel_case_types
 class _listfoodState extends State<listfood> {
   @override
   Widget build(BuildContext context) {
@@ -63,7 +66,7 @@ class _listfoodState extends State<listfood> {
                               onPressed: () {
                                 //Navigator.pushNamed(context, '/foods');
                               },
-                              child: Icon(Icons.search) ,                                
+                              child: const Icon(Icons.search) ,                                
                             )
                           ],
                         ),
@@ -71,11 +74,11 @@ class _listfoodState extends State<listfood> {
                       const Padding(padding: EdgeInsets.all(15)),
                       Column(
                         children: [
-                          Text('Chick burger Co.',style: TextStyle( color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),),
-                          Text('Chick burger Co.',style: TextStyle( color: Color.fromARGB(255, 231, 220, 220), fontSize: 16)),
+                          const Text('Chick burger Co.',style: TextStyle( color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),),
+                          const Text('Chick burger Co.',style: TextStyle( color: Color.fromARGB(255, 231, 220, 220), fontSize: 16)),
                           Container(
-                            decoration: BoxDecoration(color: Colors.white60, borderRadius: BorderRadius.all(Radius.circular(15))),
-                            margin: EdgeInsets.symmetric(horizontal: 175),                                
+                            decoration: const BoxDecoration(color: Colors.white60, borderRadius: BorderRadius.all(Radius.circular(15))),
+                            margin: const EdgeInsets.symmetric(horizontal: 175),                                
                             child:Row(                                  
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: const [
@@ -88,7 +91,7 @@ class _listfoodState extends State<listfood> {
                       ),
                       const Padding(padding: EdgeInsets.all(10)),
                       Container( 
-                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        margin: const EdgeInsets.symmetric(horizontal: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -397,7 +400,7 @@ class _listfoodState extends State<listfood> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children:  [
-                Text(''),
+                const Text(''),
                 IconButton(
                   onPressed: (){}, 
                   icon:  (favo)?Icon(Icons.favorite,color: Color.fromARGB(255, 204, 14, 0),):Icon(Icons.favorite_border, color: Color.fromARGB(255, 204, 14, 0)))                    

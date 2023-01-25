@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class fooddetails extends StatelessWidget {
   const fooddetails({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return listfooddetails();
+    return const listfooddetails();
   }
 }
 
+// ignore: camel_case_types
 class listfooddetails extends StatefulWidget {
   const listfooddetails({super.key});
 
@@ -16,10 +18,11 @@ class listfooddetails extends StatefulWidget {
   State<listfooddetails> createState() => _listfooddetailsState();
 }
 
+// ignore: camel_case_types
 class _listfooddetailsState extends State<listfooddetails> {
   final ButtonStyle style = ElevatedButton.styleFrom(
     textStyle: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
-    padding: EdgeInsets.all(0),
+    padding: const EdgeInsets.all(0),
 
   );
 
@@ -69,7 +72,7 @@ class _listfooddetailsState extends State<listfooddetails> {
                               onPressed: () {
                                 //Navigator.pushNamed(context, '/foods');
                               },
-                              child: Icon(Icons.search) ,                                
+                              child: const Icon(Icons.search) ,                                
                             )
                           ],
                         ),
@@ -94,9 +97,9 @@ class _listfooddetailsState extends State<listfooddetails> {
                   Container(
                     decoration: const BoxDecoration( color: Color.fromARGB(255, 223, 222, 222) ),
                     child: Row(
-                      children: [
+                      children: const [
                         Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: EdgeInsets.all(16.0),
                           child: Text('Add Some Extras',style: TextStyle(color: Colors.black45, fontWeight: FontWeight.bold),),
                         ),
                       ],
@@ -104,7 +107,7 @@ class _listfooddetailsState extends State<listfooddetails> {
                   ),
                   Expanded(
                     child: Container(
-                      decoration: BoxDecoration(color: Colors.white ),
+                      decoration: const BoxDecoration(color: Colors.white ),
                       //padding: EdgeInsets.all(16),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -115,14 +118,14 @@ class _listfooddetailsState extends State<listfooddetails> {
                               Row(
                                 children: [
                                   Checkbox(value: false, onChanged: (value) => {},),
-                                  Text('Extra Tatty', style: TextStyle(fontWeight: FontWeight.bold),)
+                                  const Text('Extra Tatty', style: TextStyle(fontWeight: FontWeight.bold),)
                                 ],
                               ),
-                              Text("+\$ 2.00",style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),)
+                              const Text("+\$ 2.00",style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),)
                             ]
                           ),
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
                             child: Center(
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -132,10 +135,10 @@ class _listfooddetailsState extends State<listfooddetails> {
                                       border: Border.all(color: Colors.grey,style: BorderStyle.solid,),
                                       borderRadius: BorderRadius.circular(10)
                                     ),
-                                    child: IconButton(onPressed: () {}, icon: Icon(Icons.remove))
+                                    child: IconButton(onPressed: () {}, icon: const Icon(Icons.remove))
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal:10.0),
+                                  const Padding(
+                                    padding: EdgeInsets.symmetric(horizontal:10.0),
                                     child: Text("1",style: TextStyle(fontSize: 25)),
                                   ),
                                   Container(
@@ -143,7 +146,7 @@ class _listfooddetailsState extends State<listfooddetails> {
                                       border: Border.all(color: Colors.grey,style: BorderStyle.solid,),
                                       borderRadius: BorderRadius.circular(10)
                                     ),
-                                    child: IconButton(onPressed: () {}, icon: Icon(Icons.add))
+                                    child: IconButton(onPressed: () {}, icon: const Icon(Icons.add))
                                   )
                                 ],
                                 )
@@ -151,17 +154,24 @@ class _listfooddetailsState extends State<listfooddetails> {
                           ),
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 40),
-                            child: ElevatedButton(
-                              //style: ButtonStyle(backgroundColor: Colors.brown),
-                              onPressed: () {}, 
-                              child: Row(
+                            child:ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  foregroundColor: Colors.white, 
+                                  backgroundColor: const Color.fromARGB(255, 73, 62, 94),
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                                  ),
+                                ),
+                                onPressed: () {},
+                                child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                children: [
+                                children: const [
                                   Text('ADD TO CART'),
                                   Text('\$ 7,00')
                                 ],
-                              )),
-                          )
+                              )),                                
+                              ),
+                             
                         ],
                       ),
                     )
@@ -193,10 +203,10 @@ class _listfooddetailsState extends State<listfooddetails> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children:  [
-                Text(''),
+                const Text(''),
                 IconButton(
                   onPressed: (){}, 
-                  icon:  (favo)?Icon(Icons.favorite,color: Color.fromARGB(255, 204, 14, 0),):Icon(Icons.favorite_border, color: Color.fromARGB(255, 204, 14, 0)))                    
+                  icon:  (favo)?const Icon(Icons.favorite,color: Color.fromARGB(255, 204, 14, 0),):const Icon(Icons.favorite_border, color: Color.fromARGB(255, 204, 14, 0)))                    
               ],
             )
             ],
@@ -206,7 +216,7 @@ class _listfooddetailsState extends State<listfooddetails> {
           children:  [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: Text('$name', style: TextStyle(fontWeight: FontWeight.bold),),
+              child: Text('$name', style: const TextStyle(fontWeight: FontWeight.bold),),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -218,8 +228,8 @@ class _listfooddetailsState extends State<listfooddetails> {
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Row(
             children: [
-              Text('$start',style: TextStyle(color: Colors.black,fontSize: 15),),
-              Icon(Icons.star_border,color: Colors.yellow,size: 16,)
+              Text('$start',style: const TextStyle(color: Colors.black,fontSize: 15),),
+              const Icon(Icons.star_border,color: Colors.yellow,size: 16,)
             ],
           ),
         ),
