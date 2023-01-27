@@ -20,12 +20,15 @@ class listfooddetails extends StatefulWidget {
 
 // ignore: camel_case_types
 class _listfooddetailsState extends State<listfooddetails> {
+
   final ButtonStyle style = ElevatedButton.styleFrom(
     textStyle: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
     padding: const EdgeInsets.all(0),
 
   );
-
+  int counter = 0;
+  bool _isCheck = false;
+  
   @override
   Widget build(BuildContext context) {
 
@@ -117,11 +120,18 @@ class _listfooddetailsState extends State<listfooddetails> {
                             children: [
                               Row(
                                 children: [
-                                  Checkbox(value: false, onChanged: (value) => {},),
+                                  Checkbox(value: _isCheck, onChanged: (value) => {
+                                    setState(() {
+                                      _isCheck = value!;
+                                    },)
+                                  },),
                                   const Text('Extra Tatty', style: TextStyle(fontWeight: FontWeight.bold),)
                                 ],
                               ),
-                              const Text("+\$ 2.00",style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),)
+                              const Padding(
+                                padding:  EdgeInsets.only(right: 8),
+                                child:  Text("+\$ 2.00",style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),),
+                              )
                             ]
                           ),
                           Container(
@@ -135,18 +145,28 @@ class _listfooddetailsState extends State<listfooddetails> {
                                       border: Border.all(color: Colors.grey,style: BorderStyle.solid,),
                                       borderRadius: BorderRadius.circular(10)
                                     ),
-                                    child: IconButton(onPressed: () {}, icon: const Icon(Icons.remove))
+                                    child: IconButton(onPressed: () {
+                                      setState(() {
+                                        if (counter>0) {
+                                          counter--;
+                                        }
+                                      });
+                                    }, icon: const Icon(Icons.remove))
                                   ),
-                                  const Padding(
+                                  Padding(
                                     padding: EdgeInsets.symmetric(horizontal:10.0),
-                                    child: Text("1",style: TextStyle(fontSize: 25)),
+                                    child: Text("$counter",style: TextStyle(fontSize: 25)),
                                   ),
                                   Container(
                                     decoration: BoxDecoration( 
                                       border: Border.all(color: Colors.grey,style: BorderStyle.solid,),
                                       borderRadius: BorderRadius.circular(10)
                                     ),
-                                    child: IconButton(onPressed: () {}, icon: const Icon(Icons.add))
+                                    child: IconButton(onPressed: () {
+                                      setState(() {
+                                        counter++;                                        
+                                      });
+                                    }, icon: const Icon(Icons.add))
                                   )
                                 ],
                                 )
