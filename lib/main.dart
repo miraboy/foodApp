@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'screens/accueil.dart';
 import 'screens/food.dart';
 import 'screens/onboarding.dart';
+import 'screens/profil.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/home':(context) => const home(),
         '/login':(context) => const login(),
         '/register':(context) => const Register(),
+        '/profil':(context) => const profil(),
         '/foods':(context) => const food(),
         '/onboarding':(context) => const Onboarding(),
         '/fooddetails':(context) => const fooddetails()

@@ -1,4 +1,3 @@
-import 'package:FoodApp/screens/food.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -41,6 +40,17 @@ class _OnboardingState extends State<Onboarding> {
                       },
                       child: const Text(
                         "Skip",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      )),                  
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/profil');
+                      },
+                      child: const Text(
+                        "Profil",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
